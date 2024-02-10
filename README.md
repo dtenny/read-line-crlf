@@ -36,6 +36,16 @@ To run tests:
     (ql:quickload :read-line-crlf-test)
     (read-line-crlf-test:run-tests)
 
+# The BUFFER parameter
+
+`read-line-crlf` takes an optional `buffer` parameter after all the standard
+READ-LINE parameters.  If you're calling it
+in a loop you can avoid some consing by passing a larger buffer, e.g.
+
+    (let ((buffer (make-string 1024)))
+      (loop ...
+        (read-line-crlf stream nil nil nil buffer) ...))
+
 # Tested Lisps
 
 SBCL, CCL, ABCL, Allegro CL, ECL were tested and working fine with

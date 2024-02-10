@@ -20,7 +20,7 @@ Have a nice day.
 
 # Usage 
 
-If you didn't get this via quickload from the quickload repo (because it isn't
+If you didn't get this via quicklisp from the quicklisp repo (because it isn't
 there yet), add it to your `~/quicklisp/localprojects/` directory, update/wipe
 the `system-index.txt` file accordingly, and then you can quickload it.
 

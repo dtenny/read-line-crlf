@@ -51,6 +51,7 @@ in a loop you can avoid some consing by passing a larger buffer, e.g.
 SBCL, CCL, ABCL, Allegro CL, ECL were tested and working fine with
 relatively recent releases as of Feb 10 2024.
 
-LispWorks was also tested but doesn't work at all.  I suspect it's
-something about char codes, `make-string`, `(setf (schar ...))`, and
-`read-char` interactions.  Perhaps someone will have some suggestions.
+LispWorks 8 works as well, but I'm unsure how to declare the buffer for 
+optimal effect (not that I've done that correctly for other lisps, but at
+least they don't break), so the buffer type declaration is omitted for LispWorks.
+See `read-line-crlf` function code for more details.

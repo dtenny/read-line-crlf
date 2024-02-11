@@ -6,7 +6,7 @@
 (in-package :read-line-crlf-asd)
 
 (defsystem :read-line-crlf
-  :version "1.0.0"
+  :version "1.0.1"
   :license "MIT"
   :author "Dave Tenny"
   :description "READ-LINE replacement that respects LF, CR, and CRLF line terminations."

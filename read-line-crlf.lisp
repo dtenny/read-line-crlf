@@ -32,7 +32,13 @@ STREAM must support PEEK-CHAR for CR/CRLF processing."
            (eof? nil)
            (buffer (or buffer (make-string 128)))
            (buflen (length buffer)))
-      (declare (type (simple-array character (*)) buffer)
+      ;; The type of (make-string n) on lispworks is not
+      ;; (subtypep (simple-array character (*))) and this declaration
+      ;; makes a mess of things on lispworks. 
+      ;; If SAFETY 3 is used, lispworks also complains that buffer
+      ;; is bound to garbage as well.  Advice welcome, meanwhile
+      ;; omitting the declaration seems to make things work on Lispworks(8).
+      (declare #-LISPWORKS (type (simple-array character (*)) buffer)
                (fixnum index buflen))
       (setf (schar buffer 0) (the character ch))
       (loop
